@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row my-3">
+        <div class="col-8">
+            <h1>Products List</h1>
+        </div>
+        <div class="col-4 text-right">
+            <button class="btn btn-info" (click)="getProducts()">
+                <i class="fa fa-refresh"></i>
+            </button>
+            <button class="btn btn-primary">
+                <i class="fa fa-plus"></i> Create Product
+            </button>
+        </div>
+    </div>
+    <div class="row" *ngIf="loading">
+        <div class="col text-center">
+            <div class="spinner-border" role="status"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Mini Description</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Tools</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of products">
+                            <td><img [src]="p.photo" height="30" /></td>
+                            <td>{{ p.title }}</td>
+                            <td>{{ p.miniDescription }}</td>
+                            <td>{{ p.price }}</td>
+                            <td>{{ p.category }}</td>
+                            <td class="text-nowrap">
+                                <button class="btn btn-sm btn-warning mr-1">
+                                    <i class="fa fa-pencil"></i>
+                                </button>
+                                <button (click)="deleteProduct(p._id)" class="btn btn-sm btn-danger">
+                                    <i class="fa fa-remove"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
