@@ -10,6 +10,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductCreateComponent } from './components/product-create/product-create.component';
+import { ProductUpdateComponent } from './components/product-update/product-update.component';
 
 const routes = [
   {
@@ -18,7 +20,20 @@ const routes = [
   },
   {
     path: "products",
-    component: ProductsComponent
+    children: [
+      {
+        path: "",
+        component: ProductsComponent
+      },
+      {
+        path: "create",
+        component: ProductCreateComponent
+      },
+      {
+        path: "update/:productId",
+        component: ProductUpdateComponent
+      }
+    ]
   }
 ];
 
@@ -27,7 +42,9 @@ const routes = [
     AppComponent,
     HeaderComponent,
     DashboardComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductCreateComponent,
+    ProductUpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -7,9 +7,9 @@
             <button class="btn btn-info" (click)="getProducts()">
                 <i class="fa fa-refresh"></i>
             </button>
-            <button class="btn btn-primary">
+            <a class="btn btn-primary" routerLink="/products/create">
                 <i class="fa fa-plus"></i> Create Product
-            </button>
+            </a>
         </div>
     </div>
     <div class="row" *ngIf="loading">
@@ -39,9 +39,9 @@
                             <td>{{ p.price }}</td>
                             <td>{{ p.category }}</td>
                             <td class="text-nowrap">
-                                <button class="btn btn-sm btn-warning mr-1">
+                                <a [routerLink]="'/products/update/' + p._id" class="btn btn-sm btn-warning mr-1">
                                     <i class="fa fa-pencil"></i>
-                                </button>
+                                </a>
                                 <button (click)="deleteProduct(p._id)" class="btn btn-sm btn-danger">
                                     <i class="fa fa-remove"></i>
                                 </button>
