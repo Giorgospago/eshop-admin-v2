@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IProduct } from 'src/app/interfaces/IProduct';
 import { environment } from 'src/environments/environment';
-import { runInThisContext } from 'vm';
 
 @Component({
   selector: 'app-products',
