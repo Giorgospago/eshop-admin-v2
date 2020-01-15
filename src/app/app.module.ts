@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductCreateComponent } from './components/product-create/product-create.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 const routes = [
   {
@@ -34,6 +35,15 @@ const routes = [
         component: ProductUpdateComponent
       }
     ]
+  },
+  {
+    path: "categories",
+    children: [
+      {
+        path: "",
+        component: CategoriesComponent
+      }
+    ]
   }
 ];
 
@@ -44,7 +54,8 @@ const routes = [
     DashboardComponent,
     ProductsComponent,
     ProductCreateComponent,
-    ProductUpdateComponent
+    ProductUpdateComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

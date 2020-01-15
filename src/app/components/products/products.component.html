@@ -37,7 +37,7 @@
                             <td>{{ p.title }}</td>
                             <td>{{ p.miniDescription }}</td>
                             <td>{{ p.price }}</td>
-                            <td>{{ p.category }}</td>
+                            <td>{{ p.category.title }}</td>
                             <td class="text-nowrap">
                                 <a [routerLink]="'/products/update/' + p._id" class="btn btn-sm btn-warning mr-1">
                                     <i class="fa fa-pencil"></i>
