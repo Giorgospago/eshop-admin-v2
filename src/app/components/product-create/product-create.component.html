@@ -65,14 +65,19 @@
     <div class="row">
         <div class="col-12">
             <div class="form-group">
-                <label for="product_description">Description</label>
-                <textarea [(ngModel)]="product.description" class="form-control" id="product_description"></textarea>
+                <label>Description</label>
+                <editor [(ngModel)]="product.description"></editor>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-4 offset-4 mt-2 mb-5">
             <button (click)="saveProduct()" class="btn btn-success btn-block">Save</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <pre>{{ product | json }}</pre>
         </div>
     </div>
 </div>

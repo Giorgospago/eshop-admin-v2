@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductCreateComponent } from './components/product-create/product-create.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 const routes = [
   {
@@ -63,7 +64,8 @@ const routes = [
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

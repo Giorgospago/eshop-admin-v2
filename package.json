@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.14",
     "@ng-bootstrap/ng-bootstrap": "^2.0.0-alpha.0",
     "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
+    "@tinymce/tinymce-angular": "^3.3.1",
     "bootstrap": "^4.0.0",
     "jquery": "^3.4.1",
     "rxjs": "~6.4.0",
