@@ -4,11 +4,11 @@
             <div class="box">
                 <div class="form-group">
                     <label for="email">Email: </label>
-                    <input type="email" [(ngModel)]="loginData.email" class="form-control" />
+                    <input type="email" [(ngModel)]="loginData.email" class="form-control" (keydown.enter)="login()"/>
                 </div>
                 <div class="form-group">
                     <label for="password">Password: </label>
-                    <input type="password" [(ngModel)]="loginData.password" class="form-control" />
+                    <input type="password" [(ngModel)]="loginData.password" class="form-control" (keydown.enter)="login()"/>
                 </div>
 
                 <div *ngIf="errorMessage" class="alert alert-danger">

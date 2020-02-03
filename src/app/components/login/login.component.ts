@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
       .subscribe(response => {
         if (response.success) {
           this.ls.store("token", response.token);
+          this.ls.store("user", response.user);
           this.router.navigate(["/"]);
         } else {
           this.errorMessage = response.message || "";
