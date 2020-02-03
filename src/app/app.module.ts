@@ -16,6 +16,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { LoginComponent } from './components/login/login.component';
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
+import { NgxWebstorageModule } from 'ngx-webstorage';
 
 const routes = [
   {
@@ -79,7 +80,8 @@ const routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
     NgbModule.forRoot(),
-    EditorModule
+    EditorModule,
+    NgxWebstorageModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
