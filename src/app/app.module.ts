@@ -19,6 +19,7 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AuthGuard } from './guards/auth.guard';
+import { ChartModule } from 'angular2-chartjs';
 
 const routes = [
   {
@@ -84,7 +85,8 @@ const routes = [
     RouterModule.forRoot(routes),
     NgbModule.forRoot(),
     EditorModule,
-    NgxWebstorageModule.forRoot()
+    NgxWebstorageModule.forRoot(),
+    ChartModule
   ],
   providers: [
     {
