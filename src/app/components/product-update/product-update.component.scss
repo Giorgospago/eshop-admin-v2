@@ -1,0 +1,29 @@
+.gallery-item {
+    position: relative;
+    user-select: none;
+
+    .gallery-item-remove {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        transition: opacity 0.5s ease, transform 0.1s linear;
+        cursor: pointer;
+        background-color: red;
+        color: white;
+        border-radius: 100%;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+
+        &:active {
+            transform: scale(0.8) translateY(2px);
+        }
+    }
+
+    &:hover .gallery-item-remove{
+        opacity: 1;
+    }
+}

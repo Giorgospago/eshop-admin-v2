@@ -58,7 +58,33 @@
         <div class="col-6">
             <div class="form-group">
                 <label for="product_photo">Photo</label>
-                <input [(ngModel)]="product.photo" type="url" class="form-control" id="product_photo"/>
+                <dropzone
+                    [config]="{maxFiles: 1, addRemoveLinks: true}"
+                    [message]="'Click or drag images here to upload'" 
+                    (error)="onUploadError($event)" 
+                    (success)="onUploadSuccess($event)"
+                ></dropzone>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="product_gallery">Gallery</label>
+                <dropzone
+                    [message]="'Click or drag images here to upload to gallery'" 
+                    (success)="onUploadGallerySuccess($event)"
+                ></dropzone>
+                
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-2 gallery-item" *ngFor="let name of product.gallery;let i = index">
+                            <i class="fa fa-remove gallery-item-remove" (click)="removeFromGallery(i)"></i>
+                            <img class="img-fluid" [src]="'http://localhost:3000/uploads/' + name"/>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>

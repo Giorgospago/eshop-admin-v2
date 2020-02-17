@@ -20,6 +20,17 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AuthGuard } from './guards/auth.guard';
 import { ChartModule } from 'angular2-chartjs';
+import { DropzoneModule, DROPZONE_CONFIG, DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
+import { environment } from 'src/environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
+const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
+  url: environment.apiUrl + '/upload',
+  maxFilesize: 20,
+  acceptedFiles: 'image/*',
+  paramName: 'file'
+};
+
 
 const routes = [
   {
@@ -86,13 +97,19 @@ const routes = [
     NgbModule.forRoot(),
     EditorModule,
     NgxWebstorageModule.forRoot(),
-    ChartModule
+    ChartModule,
+    DropzoneModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
+    },
+    {
+      provide: DROPZONE_CONFIG,
+      useValue: DEFAULT_DROPZONE_CONFIG
     }
   ],
   bootstrap: [AppComponent]
