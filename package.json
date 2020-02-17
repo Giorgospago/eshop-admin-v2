@@ -21,7 +21,7 @@
     "@angular/pwa": "^0.900.2",
     "@angular/router": "~8.2.14",
     "@angular/service-worker": "~8.2.14",
-    "@ng-bootstrap/ng-bootstrap": "^2.0.0-alpha.0",
+    "@ng-bootstrap/ng-bootstrap": "^5.3.0",
     "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
     "@tinymce/tinymce-angular": "^3.3.1",
     "angular2-chartjs": "^0.5.1",

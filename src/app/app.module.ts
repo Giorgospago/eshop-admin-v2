@@ -94,7 +94,7 @@ const routes = [
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    NgbModule.forRoot(),
+    NgbModule,
     EditorModule,
     NgxWebstorageModule.forRoot(),
     ChartModule,
