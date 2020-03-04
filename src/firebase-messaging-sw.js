@@ -1,7 +1,5 @@
-export const environment = {
-  production: true,
-  apiUrl: "https://api-appisteuto.develobird.gr/admin",
-  firebase: {
+importScripts('https://www.gstatic.com/firebasejs/7.6.0/firebase.js');
+firebase.initializeApp({
     apiKey: "AIzaSyCHkeAUCZIURKzspxCulLmkKWRdIqi79Zo",
     authDomain: "appisteuto.firebaseapp.com",
     databaseURL: "https://appisteuto.firebaseio.com",
@@ -10,5 +8,5 @@ export const environment = {
     messagingSenderId: "57441556404",
     appId: "1:57441556404:web:56f77cb171eab19ff1c4e1",
     measurementId: "G-VJMXX5GYPL"
-  }
-};
+});
+const messaging = firebase.messaging();

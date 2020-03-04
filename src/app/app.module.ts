@@ -23,6 +23,8 @@ import { ChartModule } from 'angular2-chartjs';
 import { DropzoneModule, DROPZONE_CONFIG, DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
 import { environment } from 'src/environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   url: environment.apiUrl + '/upload',
@@ -99,7 +101,9 @@ const routes = [
     NgxWebstorageModule.forRoot(),
     ChartModule,
     DropzoneModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireMessagingModule
   ],
   providers: [
     {
