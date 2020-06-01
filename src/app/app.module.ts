@@ -25,6 +25,7 @@ import { environment } from 'src/environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { CategoryUpdateComponent } from './components/category-update/category-update.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   url: environment.apiUrl + '/upload',
@@ -38,7 +39,7 @@ const routes = [
   {
     path: "",
     component: AdminLayoutComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: "",
@@ -67,6 +68,10 @@ const routes = [
           {
             path: "",
             component: CategoriesComponent
+          },
+          {
+            path: "update/:categoryId",
+            component: CategoryUpdateComponent
           }
         ]
       }
@@ -88,7 +93,8 @@ const routes = [
     ProductUpdateComponent,
     CategoriesComponent,
     LoginComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    CategoryUpdateComponent
   ],
   imports: [
     BrowserModule,

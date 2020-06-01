@@ -16,7 +16,11 @@
                 <tbody>
                     <tr *ngFor="let cat of categories">
                         <td>{{ cat.title }}</td>
-                        <td></td>
+                        <td>
+                          <button [routerLink]="['/categories/update/', cat._id]" class="btn btn-sm btn-warning">
+                            Edit
+                          </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from "src/environments/environment"
-import { ICategory } from 'src/app/interfaces/ICategory';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {environment} from "src/environments/environment"
+import {ICategory} from 'src/app/interfaces/ICategory';
 
 @Component({
   selector: 'app-categories',
@@ -14,7 +14,8 @@ export class CategoriesComponent implements OnInit {
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
 
@@ -23,10 +24,12 @@ export class CategoriesComponent implements OnInit {
   }
 
   public getCategories() {
-    this.http.get<ICategory[]>(environment.apiUrl + "/categories")
-    .subscribe(response => {
-      this.categories = response;
-    });
+    this.http.get(environment.apiUrl + "/categories")
+      .subscribe((response: any) => {
+        if (response.success) {
+          this.categories = response.categories;
+        }
+      });
   }
 
 }

@@ -1,15 +1,29 @@
 import { Component } from '@angular/core';
 import { AngularFireMessaging } from '@angular/fire/messaging';
 import { mergeMapTo } from "rxjs/operators";
+import {LocalStorageService} from "ngx-webstorage";
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../environments/environment";
+import {IResponse} from "./interfaces/IResponse";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
-  constructor(private afm: AngularFireMessaging) {
+
+  constructor(
+    private afm: AngularFireMessaging,
+    private ls: LocalStorageService,
+    private http: HttpClient
+  ) {
       this.requestPermission();
+      // this.ls.store("lang", "el");
+      this.http.get<IResponse>(environment.languagesUrl)
+        .subscribe((response) => {
+          this.ls.store("languages", response.languages);
+        });
+
   }
 
 

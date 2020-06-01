@@ -3,25 +3,38 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: 'full'}">
-          <a class="nav-link" routerLink="/">Home</a>
+          <a class="nav-link" routerLink="/" i18n>Home</a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" routerLink="/products">Products</a>
+          <a class="nav-link" routerLink="/products" i18n>Products</a>
         </li>
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" routerLink="/categories">Categories</a>
+          <a class="nav-link" routerLink="/categories" i18n>Categories</a>
         </li>
       </ul>
-   
+
       <span class="text-white mr-3">
-        Hello <b>{{ user?.firstName }}!</b>
+        <span i18n>Hello</span> <b>{{ user?.firstName }}!</b>
       </span>
-      <button (click)="logout()" class="btn btn-outline-light">
+      <button (click)="logout()" class="btn btn-outline-light" i18n>
         Logout
       </button>
+
+      <div>
+        <span *ngFor="let l of languages">
+          <img
+            (click)="changeLanguage(l.id)"
+            [src]="l.flag"
+            [title]="l.name"
+            height="30"
+            [class.active]="lang === l.id"
+            class="flags"
+          />
+        </span>
+      </div>
     </div>
   </nav>

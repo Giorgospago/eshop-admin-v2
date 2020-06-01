@@ -13,6 +13,13 @@ export class HeaderComponent implements OnInit {
   @LocalStorage("user")
   public user: IUser;
 
+  @LocalStorage("languages")
+  public languages: any[];
+
+  @LocalStorage("lang")
+  public lang: string;
+
+
   constructor(
     private ls: LocalStorageService,
     private router: Router
@@ -25,6 +32,11 @@ export class HeaderComponent implements OnInit {
     this.ls.clear("token");
     this.ls.clear("user");
     this.router.navigate(["/login"]);
+  }
+
+  public changeLanguage(lang) {
+    this.ls.store("lang", lang);
+    window.location.reload();
   }
 
 }

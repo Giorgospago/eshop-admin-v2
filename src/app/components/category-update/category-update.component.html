@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" *ngFor="let lang of languages">
+      <div class="form-group">
+        <label><span i18n>Τίτλος</span> ({{ lang.name }})</label>
+        <input
+          type="text"
+          [(ngModel)]="category.title[lang.id]"
+          class="form-control"
+          placeholder="Γράψε τον τίτλο"
+          i18n-placeholder
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      <button class="btn btn-success" (click)="save()" i18n>Save</button>
+    </div>
+  </div>
+</div>
+
+<span i18n="The first letter of day Monday">Δ</span>
+

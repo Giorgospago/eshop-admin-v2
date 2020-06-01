@@ -1,0 +1,13 @@
+
+.flags {
+  filter: grayscale(100);
+  transition: all 0.3s linear;
+
+  &:hover {
+    filter: grayscale(0);
+  }
+
+  &.active {
+    filter: grayscale(0);
+  }
+}

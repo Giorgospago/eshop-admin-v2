@@ -17,6 +17,7 @@
     "@angular/core": "~8.2.14",
     "@angular/fire": "^5.4.2",
     "@angular/forms": "~8.2.14",
+    "@angular/localize": "^9.1.9",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/pwa": "^0.900.2",
@@ -27,13 +28,13 @@
     "@tinymce/tinymce-angular": "^3.3.1",
     "angular2-chartjs": "^0.5.1",
     "bootstrap": "^4.0.0",
+    "firebase": "7.6.0",
     "jquery": "^3.4.1",
     "ngx-dropzone-wrapper": "^9.0.0",
     "ngx-webstorage": "^4.0.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1",
-    "firebase": "7.6.0"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.20",
